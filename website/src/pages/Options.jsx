@@ -5,7 +5,6 @@ import rendering from "@/assets/rendering.png"
 import rendering2 from "@/assets/rendering-2.png"
 import upload from "@/assets/upload.png"
 import upload2 from "@/assets/upload-2.png"
-
 import Image from "next/image";
 
 function OptionButton(props){
@@ -33,9 +32,6 @@ function OptionButton(props){
     </div>
   )
 }
-
-localStorage.setItem("RoomTone", "/poly.glb")
-
 
 function Options() {
   const router = useRouter();
