@@ -61,7 +61,12 @@ const Show3D = () => {
         controls = new OrbitControls(camera, renderer.domElement);
 
         const loader = new GLTFLoader();
-        if(filePath!=null && filePath!='' && filePath!=" " && filePath!=undefined){
+        if (
+          filePath != null &&
+          filePath != "" &&
+          filePath != " " &&
+          filePath != undefined
+        ) {
           loader.load(
             filePath,
             (gltf) => {
@@ -73,14 +78,14 @@ const Show3D = () => {
               // Add ambient light to the scene
               const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
               scene.add(ambientLight);
-  
+
               // Add directional light to the scene
               const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
               directionalLight.position.set(0, 1, 1).normalize();
               scene.add(directionalLight);
-  
+
               const secondLoader = new GLTFLoader();
-  
+
               secondLoader.load(
                 "/TOF_holder_RoomTone.glb",
                 (gltf2) => {
@@ -93,6 +98,28 @@ const Show3D = () => {
                   console.error(error);
                 }
               );
+              const button = document.createElement("button");
+              button.innerHTML = "Check Acoustics";
+              button.style.position = "absolute";
+              button.style.top = "10px";
+              button.style.left = "10px";
+              (button.style.backgroundColor = colors.cloudyWhite),
+                (button.style.width = "10vw"),
+                (button.style.height = "7vh"),
+                (button.style.padding = 10),
+                (button.style.minWidth = "10px"),
+                (button.style.color = colors.midnightBlack),
+                (button.style.borderRadius = 20),
+                (button.style.cursor = "pointer"),
+                (button.style.marginTop = "2vh"),
+                (button.style.fontSize = 20),
+                (button.style.opacity = 0.4),
+
+                button.addEventListener("click", () => {
+                  console.log("Button clicked!");
+                });
+              let container = mount.current;
+              container.appendChild(button);
             },
             undefined,
             (error) => {
@@ -103,7 +130,7 @@ const Show3D = () => {
             }
           );
         }
-        
+
         // Add the button
 
         // const button = document.createElement("button");

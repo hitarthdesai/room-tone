@@ -10,6 +10,8 @@ function UploadForm() {
   const [file, setFile] = React.useState(null);
   const [onHover, setOnHover] = React.useState(false);
   const [checkFile, setCheck] = React.useState(false);
+  const [submitText, setSubmitText] = React.useState('Upload');
+
   const router = useRouter();
 
   const handleFileInputChange = (event) => {
@@ -19,6 +21,7 @@ function UploadForm() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    setSubmitText("Please Wait....")
     const imageRef = ref(storage, `${file.name}`);
     uploadBytes(imageRef, file)
       .then((snapshot) => {
@@ -93,7 +96,7 @@ function UploadForm() {
               setOnHover(false);
             }}
           >
-            {"Upload"}
+            {submitText}
           </button>
         ) : (
           <div
@@ -105,7 +108,7 @@ function UploadForm() {
               setOnHover(false);
             }}
           >
-            {"Submit"}
+            {'Submit'}
           </div>
         )}
       </form>
