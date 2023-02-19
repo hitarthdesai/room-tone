@@ -347,7 +347,7 @@ bf_matcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True) #hamming distance 
 map_points = o3d.geometry.PointCloud()
 keyframes = []
 # Open video file
-cap = cv2.VideoCapture('/content/drive/MyDrive/make-a-thon/IMG_1606.MOV')
+cap = cv2.VideoCapture('/content/drive/MyDrive/make-a-thon/IMG_1608.MOV')
 
 """Looping through the frames of the video. 
 Steps:
@@ -424,7 +424,7 @@ while cap.isOpened():
 cap.release()
 
 # Save point cloud as .ply file
-o3d.io.write_point_cloud("point_cloud.ply", map_points)
+o3d.io.write_point_cloud("gb_room.ply", map_points)
 
 np.version.version
 
