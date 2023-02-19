@@ -43,9 +43,7 @@ const Show3D = () => {
   React.useEffect(() => {
     if (foundError != true) {
       let scene, camera, renderer, controls;
-      if (typeof window !== 'undefined') {
-        // client-side code that uses the `window` object
-      
+
       const init = () => {
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(
@@ -130,7 +128,7 @@ const Show3D = () => {
         // let container = mount.current;
         // container.appendChild(button);
       };
-    }
+
       const animate = () => {
         requestAnimationFrame(animate);
         controls.update();

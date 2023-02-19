@@ -4,11 +4,13 @@ import { storage } from "../firebase";
 import colors from "@/constants/colors";
 import upload from "@/assets/upload.png";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function UploadForm() {
   const [file, setFile] = React.useState(null);
   const [onHover, setOnHover] = React.useState(false);
   const [checkFile, setCheck] = React.useState(false);
+  const router = useRouter();
 
   const handleFileInputChange = (event) => {
     setFile(event.target.files[0]);
@@ -23,7 +25,7 @@ function UploadForm() {
         getDownloadURL(snapshot.ref)
           .then((url) => {
             localStorage.setItem("RoomTone", url);
-            console.log("set inside local storage successfully!");
+            router.push("/SuccessUpload");
           })
           .catch((error) => {
             console.error("Error in getting url", error);
