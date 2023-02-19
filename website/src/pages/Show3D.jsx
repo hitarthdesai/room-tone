@@ -104,17 +104,17 @@ const Show3D = () => {
               button.style.top = "10px";
               button.style.left = "10px";
               (button.style.backgroundColor = colors.cloudyWhite),
-                (button.style.width = "10vw"),
+                (button.style.width = "20vw"),
+                (button.style.maxWidth = "70px"),
                 (button.style.height = "7vh"),
                 (button.style.padding = 10),
-                (button.style.minWidth = "10px"),
+                (button.style.minWidth = "20px"),
                 (button.style.color = colors.midnightBlack),
                 (button.style.borderRadius = 20),
                 (button.style.cursor = "pointer"),
                 (button.style.marginTop = "2vh"),
                 (button.style.fontSize = 20),
                 (button.style.opacity = 0.4),
-
                 button.addEventListener("click", () => {
                   console.log("Button clicked!");
                 });
@@ -130,30 +130,6 @@ const Show3D = () => {
             }
           );
         }
-
-        // Add the button
-
-        // const button = document.createElement("button");
-        // button.innerHTML = "A button";
-        // button.style.position = "absolute";
-        // button.style.top = "10px";
-        // button.style.left = "10px";
-        // button.style.backgroundColor = colors.lightMetallicBlue,
-        // button.style.width= "10vw",
-        // button.style.height = "7vh",
-        // button.style.padding = 10,
-        // button.style.minWidth = "10px",
-        // button.style.color = colors.midnightBlack,
-        // button.style.borderRadius = 20,
-        // button.style.cursor= "pointer",
-        // button.style.marginTop="2vh",
-        // button.style.fontSize = 20,
-
-        // button.addEventListener("click", () => {
-        //   console.log("Button clicked!");
-        // });
-        // let container = mount.current;
-        // container.appendChild(button);
       };
 
       const animate = () => {

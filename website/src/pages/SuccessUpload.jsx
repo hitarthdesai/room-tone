@@ -1,42 +1,43 @@
 import React from "react";
 import colors from "@/constants/colors";
-import upload from "@/assets/upload.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import rendering from "@/assets/rendering.png"
-import rendering2 from "@/assets/rendering-2.png"
-import back from "@/assets/back.png"
-import back2 from "@/assets/back-2.png"
-import success from "@/assets/success.png"
+import rendering from "@/assets/rendering.png";
+import rendering2 from "@/assets/rendering-2.png";
+import back from "@/assets/back.png";
+import back2 from "@/assets/back-2.png";
+import success from "@/assets/success.png";
 
-function OptionButton(props){
-    const [onHover, setOnHover] = React.useState(false);
+function OptionButton(props) {
+  const [onHover, setOnHover] = React.useState(false);
 
-    return(
-      <div
-          style={onHover ? styles.hoverButtonContainer : styles.buttonContainer}
-          onMouseEnter={() => {
-            setOnHover(true);
-          }}
-          onMouseLeave={() => {
-            setOnHover(false);
-          }}
-          onClick={()=>{props.clickButton()}}
-        >
-          <Image
-          src={onHover? props.src2 : props.src}
-          alt={props.title}
-          width={40}
-          height={40}
-          style={{ marginBottom: '2vh'}}
-        />
-          <b>{props.title}</b>
-      </div>
-    )
-  }
+  return (
+    <div
+      style={onHover ? styles.hoverButtonContainer : styles.buttonContainer}
+      onMouseEnter={() => {
+        setOnHover(true);
+      }}
+      onMouseLeave={() => {
+        setOnHover(false);
+      }}
+      onClick={() => {
+        props.clickButton();
+      }}
+    >
+      <Image
+        src={onHover ? props.src2 : props.src}
+        alt={props.title}
+        width={40}
+        height={40}
+        style={{ marginBottom: "2vh" }}
+      />
+      <b>{props.title}</b>
+    </div>
+  );
+}
 
 function SuccessUpload() {
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <div style={styles.appContainer}>
@@ -48,23 +49,23 @@ function SuccessUpload() {
         style={{ marginBottom: "2vh" }}
       />
       <h1 style={{ color: colors.midnightBlack }}>Successfully Uploaded!</h1>
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-      <OptionButton
-        title="Back to options"
-        src={back}
-        src2={back2}
-        clickButton={() => {
-          router.replace("/Options");
-        }}
-      />
-      <OptionButton
-        title="Render the file"
-        src={rendering}
-        src2={rendering2}
-        clickButton={() => {
-          router.replace("/Show3D");
-        }}
-      />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <OptionButton
+          title="Back to options"
+          src={back}
+          src2={back2}
+          clickButton={() => {
+            router.replace("/Options");
+          }}
+        />
+        <OptionButton
+          title="Render the file"
+          src={rendering}
+          src2={rendering2}
+          clickButton={() => {
+            router.replace("/Show3D");
+          }}
+        />
       </div>
     </div>
   );

@@ -1,60 +1,64 @@
 import React from "react";
 import colors from "@/constants/colors";
 import { useRouter } from "next/router";
-import rendering from "@/assets/rendering.png"
-import rendering2 from "@/assets/rendering-2.png"
-import upload from "@/assets/upload.png"
-import upload2 from "@/assets/upload-2.png"
-import rendered from "@/assets/rendered.png"
-import rendered2 from "@/assets/rendered-2.png"
+import rendering from "@/assets/rendering.png";
+import rendering2 from "@/assets/rendering-2.png";
+import upload from "@/assets/upload.png";
+import upload2 from "@/assets/upload-2.png";
+import rendered from "@/assets/rendered.png";
+import rendered2 from "@/assets/rendered-2.png";
 import Image from "next/image";
 
-function OptionButton(props){
+function OptionButton(props) {
   const [onHover, setOnHover] = React.useState(false);
 
-  return(
+  return (
     <div
-        style={onHover ? styles.hoverButtonContainer : styles.buttonContainer}
-        onMouseEnter={() => {
-          setOnHover(true);
-        }}
-        onMouseLeave={() => {
-          setOnHover(false);
-        }}
-        onClick={()=>{props.clickButton()}}
-      >
-        <Image
-        src={onHover? props.src2 : props.src}
+      style={onHover ? styles.hoverButtonContainer : styles.buttonContainer}
+      onMouseEnter={() => {
+        setOnHover(true);
+      }}
+      onMouseLeave={() => {
+        setOnHover(false);
+      }}
+      onClick={() => {
+        props.clickButton();
+      }}
+    >
+      <Image
+        src={onHover ? props.src2 : props.src}
         alt={props.title}
         width={40}
         height={40}
-        style={{ marginBottom: '2vh'}}
+        style={{ marginBottom: "2vh" }}
       />
-        <b>{props.title}</b>
+      <b>{props.title}</b>
     </div>
-  )
+  );
 }
 
 function Options() {
   const router = useRouter();
-  
+
   return (
     <div style={styles.appContainer}>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <div style={{display: 'flex', flex: 1, flexDirection: 'row'}}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flex: 1, flexDirection: "row" }}>
           <OptionButton
             title="Upload"
             src={upload}
             src2={upload2}
-            clickButton={()=>{router.push('/Upload')}}
+            clickButton={() => {
+              router.push("/Upload");
+            }}
           />
           <OptionButton
             title="Render"
             src={rendering}
             src2={rendering2}
-            clickButton={()=>{
+            clickButton={() => {
               router.push({
-                pathname: '/Show3D',
+                pathname: "/Show3D",
               });
             }}
           />
@@ -64,12 +68,12 @@ function Options() {
             title="Pre-Loaded Renders"
             src={rendered}
             src2={rendered2}
-            clickButton={()=>{router.push('/Renders')}}
+            clickButton={() => {
+              router.push("/Renders");
+            }}
           />
         </>
-
       </div>
-      
     </div>
   );
 }
@@ -106,9 +110,9 @@ const styles = {
     cursor: "pointer",
     marginTop: "5vh",
     fontSize: 20,
-    marginLeft: '5vw',
-    marginRight: '5vw',
-    flexDirection: 'column'
+    marginLeft: "5vw",
+    marginRight: "5vw",
+    flexDirection: "column",
   },
   hoverButtonContainer: {
     backgroundColor: colors.midnightBlack,
@@ -128,9 +132,9 @@ const styles = {
     cursor: "pointer",
     marginTop: "5vh",
     fontSize: 22,
-    marginLeft: '5vw',
-    marginRight: '5vw',
-    flexDirection: 'column'
+    marginLeft: "5vw",
+    marginRight: "5vw",
+    flexDirection: "column",
   },
 };
 
