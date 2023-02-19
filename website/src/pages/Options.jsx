@@ -5,6 +5,8 @@ import rendering from "@/assets/rendering.png"
 import rendering2 from "@/assets/rendering-2.png"
 import upload from "@/assets/upload.png"
 import upload2 from "@/assets/upload-2.png"
+import rendered from "@/assets/rendered.png"
+import rendered2 from "@/assets/rendered-2.png"
 import Image from "next/image";
 
 function OptionButton(props){
@@ -60,9 +62,9 @@ function Options() {
         <>
           <OptionButton
             title="Pre-Loaded Renders"
-            src={rendering}
-            src2={rendering2}
-            clickButton={()=>{router.push('/Show3D')}}
+            src={rendered}
+            src2={rendered2}
+            clickButton={()=>{router.push('/Renders')}}
           />
         </>
 

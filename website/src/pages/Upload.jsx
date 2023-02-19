@@ -23,7 +23,7 @@ function UploadForm() {
         getDownloadURL(snapshot.ref)
           .then((url) => {
             localStorage.setItem("RoomTone", url);
-            console.log("set inside local storage successfully!")
+            console.log("set inside local storage successfully!");
           })
           .catch((error) => {
             console.error("Error in getting url", error);
@@ -46,20 +46,30 @@ function UploadForm() {
       <h1 style={{ color: colors.midnightBlack }}>Upload a File</h1>
 
       <form onSubmit={handleFormSubmit} style={styles.formContainer}>
-        <label htmlFor="file" style={{ cursor: "pointer", borderColor: colors.midnightBlack,     border: "2px solid #000",
-    borderRadius: "5px",    padding: "10px",
-
-}}>
+        <label
+          htmlFor="file"
+          style={{
+            cursor: "pointer",
+            borderColor: colors.midnightBlack,
+            border: "2px solid #000",
+            borderRadius: "5px",
+            padding: "10px",
+          }}
+        >
           Choose File
-          {
-            file?.name!=undefined && (
-                <>
-                <span>: </span>
-                <span style={{color: colors.metallicBlue, textDecoration: 'underline'}}>{file.name}</span>
-                </>
-            )
-          }
-          
+          {file?.name != undefined && (
+            <>
+              <span>: </span>
+              <span
+                style={{
+                  color: colors.metallicBlue,
+                  textDecoration: "underline",
+                }}
+              >
+                {file.name}
+              </span>
+            </>
+          )}
           <input
             type="file"
             id="file"

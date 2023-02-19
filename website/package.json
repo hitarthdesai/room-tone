@@ -1,0 +1,31 @@
+{
+  "name": "cghs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "@react-three/drei": "^9.56.25",
+    "@react-three/fiber": "^8.11.2",
+    "dropbox": "^10.34.0",
+    "firebase": "^9.17.1",
+    "firebase-admin": "^11.5.0",
+    "gltf-loader": "^1.0.0",
+    "gltf-webpack-loader": "^1.0.6",
+    "next": "13.1.6",
+    "npm": "^9.5.0",
+    "react": "18.2.0",
+    "react-3d-viewer": "^1.0.12",
+    "react-dom": "18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.149.0",
+    "three-gltf-loader": "^1.111.0",
+    "three-orbitcontrols": "^2.110.3",
+    "three-ply-loader": "^1.0.0"
+  }
+}
