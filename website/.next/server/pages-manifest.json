@@ -1,0 +1,14 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/Home": "pages/Home.html",
+  "/_document": "pages/_document.js",
+  "/Renders": "pages/Renders.html",
+  "/Options": "pages/Options.html",
+  "/Show3D": "pages/Show3D.html",
+  "/SuccessUpload": "pages/SuccessUpload.html",
+  "/api/hello": "pages/api/hello.js",
+  "/Upload": "pages/Upload.html",
+  "/": "pages/index.html",
+  "/404": "pages/404.html"
+}
